@@ -11,7 +11,7 @@ def home():
         ticker = request.form.get('ticker').upper()
         try: #fetch real data
             stock= yf.Ticker(ticker)
-            history= stock.history(period="5d") # get the last two days to calculate
+            history= stock.history(period="2d") # get the last two days to calculate
 
             if len(history) >=2:
                 current_price= history['Close'].iloc[-1]
